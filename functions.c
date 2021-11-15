@@ -7,8 +7,8 @@
 
 #define K_CONSTANT 500
 #define MASS_CONSTANT 60
-#define DELTA_CONSTANT 0.1
-#define DELTAH_CONSTANT 100
+#define DELTA_CONSTANT 0.2
+#define DELTAH_CONSTANT 50
 
 
 components setValuesDefault(){
@@ -23,7 +23,59 @@ components setValuesDefault(){
   return initialValues;
 }
 
+int changeValues(components Data){
+  int i=0, option=0; 
+  float newValue;
+  
+  while (i==0){
+    printData(Data);
+    printf("¿Deseas cambiar algun valor?\n[1]Masa\n[2]Constante K\n[3]Delta(frecuencia de los puntos)\n[4]Delta H\n[5]Los valores son correctos\n");
+    scanf("%d",&option);
+    system("clear");
 
-/*
-FUNCION changeValues(variable con los datos, numero de la cosa que debe cambiar)
-*/
+    switch(option){
+      case 1:
+        printf("¿Cual es el nuevo valor de masa?\n");
+        scanf("%f", &newValue);
+        Data->mass = newValue;
+        printData(Data);
+        break;
+
+      case 2:
+        printf("¿Cual es el nuevo valor de K?\n");
+        scanf("%f", &newValue);
+        Data->k = newValue;
+        printData(Data);
+        break;
+
+      case 3:
+        printf("¿Cual es el nuevo valor de Delta? (intervalo de tiempo)\n");
+        scanf("%f", &newValue);
+        Data->delta = newValue;
+        printData(Data);
+        break;
+
+      case 4:
+        printf("¿Cual es el nuevo valor de Delta H?(puntos en la grafica)\n");
+        scanf("%f", &newValue);
+        Data->deltaH = newValue;
+        printData(Data);
+        break;
+
+      case 5:
+        i=1;
+        break;
+
+      default:
+        printf("Opcion invalida");
+        break;
+    }
+  }
+}
+
+int printData(components Data){
+  printf("Tus valores son:\n Masa %f\n Constante K: %f\n Delta: %f\n Delta H: %i\n",  Data->mass,Data->k,Data->delta,Data->deltaH);
+
+  return 0;
+}
+

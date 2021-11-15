@@ -7,11 +7,11 @@ int main(void)
 { 
   components Values = NULL;
   Values = calloc(1, sizeof(components));
-
   Values = setValuesDefault();
+  
+  printData(Values);
 
-  printf("default values are: %f %f %f %i\n", Values->delta, Values->mass,Values->k,Values->deltaH);
-
-
+  changeValues(Values);
+  
   return 0;
 }  

@@ -20,6 +20,8 @@ typedef struct components
 }*components;
 
 components setValuesDefault();
-
+int changeValues(components Data);
+int printData(components Data);
+int solveBongeeEquation(components Data);
 
 #endif
