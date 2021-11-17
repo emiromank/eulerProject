@@ -67,7 +67,7 @@ int changeValues(components Data){
         break;
 
       default:
-        printf("Opcion invalida");
+        printf("Opcion invalida\n\n");
         break;
     }
   }
@@ -79,3 +79,17 @@ int printData(components Data){
   return 0;
 }
 
+FILE* createFile(){
+  FILE *fp;
+  fp=fopen("solution.dat","w");
+
+  return fp;
+}
+
+int tabletoFile(int Delta, float Data[][], FILE *fp){
+  int i;
+  for(i=0;i<Delta;i++)
+  {
+    fprintf(file,"%f, %f\n",Data[i][0],Data[i][1]);
+  }
+}

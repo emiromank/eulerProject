@@ -1,2 +1,2 @@
 language = "bash"
-run = "./main.c"
+run = "./main.exe"

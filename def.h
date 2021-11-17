@@ -23,5 +23,7 @@ components setValuesDefault();
 int changeValues(components Data);
 int printData(components Data);
 int solveBongeeEquation(components Data);
+FILE* createFile();
+int tabletoFile(int Delta, float Data[][], FILE *fp);
 
 #endif
