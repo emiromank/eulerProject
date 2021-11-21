@@ -86,10 +86,16 @@ FILE* createFile(){
   return fp;
 }
 
-int tabletoFile(int Delta, float Data[][], FILE *fp){
+int tabletoFile(int Delta, float Data[][2], FILE *fp){
   int i;
   for(i=0;i<Delta;i++)
   {
-    fprintf(file,"%f, %f\n",Data[i][0],Data[i][1]);
+    fprintf(fp,"%f, %f\n",Data[i][0],Data[i][1]);
   }
+}
+
+int plot(FILE* gnupipe){
+  gnupipe=popen("gnuplot -persist","w");
+  fprintf(gnupipe,"plot \"solution.dat\" using 1:2 with lines\n");
+  return 0;
 }

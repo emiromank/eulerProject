@@ -24,6 +24,7 @@ int changeValues(components Data);
 int printData(components Data);
 int solveBongeeEquation(components Data);
 FILE* createFile();
-int tabletoFile(int Delta, float Data[][], FILE *fp);
+int tabletoFile(int Delta, float Data[][2], FILE *fp);
+int plot(FILE* gnupipe);
 
 #endif
